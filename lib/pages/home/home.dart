@@ -1,5 +1,6 @@
 // ignore_for_file: unnecessary_const
 
+import 'package:dtcc_mvp_patricia/assets/constants.dart';
 import 'package:dtcc_mvp_patricia/pages/about/about.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +24,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: const Color(0xAF713191),
-      backgroundColor: Theme.of(context).primaryColorDark,
+      backgroundColor: kDefaultColor.shade800,
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColorDark,
         title: const Icon(
@@ -47,7 +48,8 @@ class Home extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
-              MaterialPageRoute(builder: (context) => const About());
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => const About()));
             },
             child: const Text(
               'Sobre Nós',
